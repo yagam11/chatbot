@@ -6,9 +6,9 @@ const msgerChat = get(".msger-chat");
 const BOT_MSGS = [
   "早上好！",
   "抱歉，我没有明白!",
-  "I like to play games... But I don't know how to play!",
-  "Sorry if my answers are not relevant. :))",
-  "I feel sleepy! :("
+  "今天天气很好!",
+  "祝你有美好的一天！",
+  "抱歉，我有点累！"
 ];
 
 // 头像&名字
