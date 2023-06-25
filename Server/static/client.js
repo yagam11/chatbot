@@ -25,9 +25,8 @@ msgerForm.addEventListener("submit", (event) => {
   if (!msgText) return;
 
   appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+  botResponse();  
   msgerInput.value = "";
-
-  botResponse();
 });
 
 // 信息添加
@@ -54,13 +53,31 @@ function appendMessage(name, img, side, text) {
 
 // 随机回答
 function botResponse() {
-  const r = random(0, BOT_MSGS.length - 1);
-  const msgText = BOT_MSGS[r];
+  //const r = random(0, BOT_MSGS.length - 1);
+  //const msgText = BOT_MSGS[r];
+  const msgText = msgerInput.value;
+  console.log(msgText)
+  fetch('/botResponse', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ msgText })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    appendMessage(BOT_NAME, BOT_IMG, "left", data.message);
+  })
+  .catch(err => {
+    console.log(err);
+  })
+
   const delay = msgText.split(" ").length * 100;
 
-  setTimeout(() => {
+  /*setTimeout(() => {
     appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-  }, delay);
+  }, delay);*/
 }
 
 // 工具函数
