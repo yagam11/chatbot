@@ -3,19 +3,19 @@ const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 
 //五种随机回答
-const BOT_MSGS = [
-  "早上好！",
-  "抱歉，我没有明白!",
-  "今天天气很好!",
-  "祝你有美好的一天！",
-  "抱歉，我有点累！"
-];
+// const BOT_MSGS = [
+//   "早上好！",
+//   "抱歉，我没有明白!",
+//   "今天天气很好!",
+//   "祝你有美好的一天！",
+//   "抱歉，我有点累！"
+// ];
 
 // 头像&名字
 const BOT_IMG = "https://media.istockphoto.com/id/1250000899/vector/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-vector.jpg?s=612x612&w=0&k=20&c=xj8GkmfFYH_Frho_pJ0HL2dkDwbZAI0Of6KwKdVsh1s=";
 const PERSON_IMG = "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=";
 const BOT_NAME = "BOT";
-const PERSON_NAME = "";
+const PERSON_NAME = "John";
 
 // 事件监听
 msgerForm.addEventListener("submit", (event) => {
@@ -48,7 +48,7 @@ function appendMessage(name, img, side, text) {
   `;
 
   msgerChat.insertAdjacentHTML("beforeend", msgHTML);
-  msgerChat.scrollTop += 500;
+  msgerChat.scrollTop += 10000;
 }
 
 // 随机回答

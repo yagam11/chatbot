@@ -1,3 +1,4 @@
 # chatbot
 Chatbot demo
-code from: https://codepen.io/sajadhsm/pen/odaBdd
+code partly from: https://codepen.io/sajadhsm/pen/odaBdd
+run app by "flask run" in Server folder
